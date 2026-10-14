@@ -46,7 +46,7 @@
    themeToggle.setAttribute("aria-label",light?"Switch to dark theme":"Switch to light theme");
    themeToggle.setAttribute("aria-pressed",String(light));
   }
-  if(themeIcon)themeIcon.textContent=light?"\u263e":"\u2600";
+  if(themeIcon)themeIcon.textContent=light?"Dark mode":"Light mode";
   if(themeLabel)themeLabel.textContent=light?"Use dark theme":"Use light theme";
  };
  applyTheme(storedTheme==="light"?"light":"dark");

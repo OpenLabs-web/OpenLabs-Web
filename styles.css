@@ -70,4 +70,4 @@ h1,h2,h3{font-family:'Space Grotesk',sans-serif;letter-spacing:-.045em;line-heig
 @keyframes orbit-turn{from{transform:rotate(-20deg)}to{transform:rotate(340deg)}}
 @media(max-width:700px){.project-cards{grid-template-columns:1fr}}
 @media(max-width:650px){.footer-links{gap:14px}.settings>summary{padding:0 8px}.footer-links .settings-panel{right:0}}
-@media(prefers-reduced-motion:reduce){.logo-box,.hero-logo,.orbit,.settings-panel{animation:none!important;will-change:auto!important}}
+@media(prefers-reduced-motion:reduce){.logo-box,.hero-logo,.orbit,.settings-panel{animation:none!important;will-change:auto!important}}.icon-logo{padding:5px;background:#fff;border-color:#fff}.icon-logo .project-mark{width:100%;height:100%;object-fit:contain;border-radius:10px}
