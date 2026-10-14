@@ -21,3 +21,6 @@ For a project repository, the address usually includes the repository name, such
 - The contact form is only a front-end preview; it does not send or store messages yet.
 - Sign-in, sign-up and Supabase are not connected yet.
 - Never put private API keys or passwords in frontend files.
+
+##  Openlabs deployment test — October 2026
+
