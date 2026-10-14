@@ -17,7 +17,7 @@ This is a plain HTML/CSS/JavaScript site and has no build step. In **Settings â†
 For a project repository, the address usually includes the repository name, such as `https://openlabs-web.github.io/`, depending on your GitHub organization/account setup.
 
 ## Important notes
-- Website version: `v0.1.0`.
+- Website version: `v1.01a`.
 - The contact form is only a front-end preview; it does not send or store messages yet.
 - Sign-in, sign-up and Supabase are not connected yet.
 - Never put private API keys or passwords in frontend files.

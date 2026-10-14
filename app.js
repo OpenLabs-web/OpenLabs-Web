@@ -31,14 +31,45 @@ document.addEventListener("DOMContentLoaded",()=>{
   });
  }
 
+ const root=document.documentElement;
+ const settings=document.querySelector(".settings");
+ const themeToggle=document.querySelector("[data-theme-toggle]");
+ const themeLabel=document.querySelector("[data-theme-label]");
+ const themeIcon=document.querySelector("[data-theme-icon]");
+ let storedTheme="";
+ try{storedTheme=localStorage.getItem("openlabs-theme")||"";}catch(error){storedTheme="";}
+ const applyTheme=theme=>{
+  root.dataset.theme=theme;
+  const light=theme==="light";
+  if(themeToggle){
+   themeToggle.setAttribute("aria-label",light?"Switch to dark theme":"Switch to light theme");
+   themeToggle.setAttribute("aria-pressed",String(light));
+  }
+  if(themeIcon)themeIcon.textContent=light?"\u263e":"\u2600";
+  if(themeLabel)themeLabel.textContent=light?"Use dark theme":"Use light theme";
+ };
+ applyTheme(storedTheme==="light"?"light":"dark");
+ if(settings){
+  const summary=settings.querySelector("summary");
+  document.addEventListener("click",event=>{if(!settings.contains(event.target))settings.open=false;});
+  document.addEventListener("keydown",event=>{if(event.key==="Escape"&&settings.open){settings.open=false;summary.focus();}});
+ }
+ if(themeToggle)themeToggle.addEventListener("click",()=>{
+  const theme=root.dataset.theme==="light"?"dark":"light";
+  applyTheme(theme);
+  try{localStorage.setItem("openlabs-theme",theme);}catch(error){}
+ });
  document.querySelectorAll("[data-year]").forEach(node=>node.textContent=new Date().getFullYear());
 
  const form=document.querySelector("[data-demo-form]");
  if(form)form.addEventListener("submit",event=>{
   event.preventDefault();
   if(!form.reportValidity())return;
-  const message=form.querySelector("[data-form-message]");
-  message.textContent="This form is a front-end preview and cannot send or save messages yet. Please use the GitHub issue link on this page instead.";
-  message.hidden=false;
+const name=form.elements.name.value.trim();
+  const email=form.elements.email.value.trim();
+  const body=form.elements.message.value.trim();
+  const subject=encodeURIComponent("Openlabs website message");
+  const content=encodeURIComponent(`From: ${name}\nReply to: ${email}\n\n${body}`);
+  window.location.href=`mailto:nikethsreeraj2010@gmail.com?subject=${subject}&body=${content}`;
  });
 });
