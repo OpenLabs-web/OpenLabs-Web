@@ -1,10 +1,11 @@
-document.addEventListener("DOMContentLoaded",()=>{
+﻿document.addEventListener("DOMContentLoaded",()=>{
  const menu=document.querySelector("[data-menu]"),nav=document.querySelector("[data-nav]");
  if(nav){
   const mobile=window.matchMedia("(max-width: 650px)");
   const syncNavVisibility=()=>nav.setAttribute("aria-hidden",String(mobile.matches&&!nav.classList.contains("open")));
   syncNavVisibility();
-  mobile.addEventListener("change",syncNavVisibility);
+  if(mobile.addEventListener)mobile.addEventListener("change",syncNavVisibility);
+  else if(mobile.addListener)mobile.addListener(syncNavVisibility);
  }
 
 
@@ -65,7 +66,7 @@ document.addEventListener("DOMContentLoaded",()=>{
  if(form)form.addEventListener("submit",event=>{
   event.preventDefault();
   if(!form.reportValidity())return;
-const name=form.elements.name.value.trim();
+  const name=form.elements.name.value.trim();
   const email=form.elements.email.value.trim();
   const body=form.elements.message.value.trim();
   const subject=encodeURIComponent("Openlabs website message");
