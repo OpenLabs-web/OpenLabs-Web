@@ -1,23 +1,28 @@
-﻿# Openlabs Web
+﻿# OpenStudio
 
-A lightweight, responsive multi-page website for Openlabs.
+OpenStudio is an independent technology project created by Niketh Sreeraj. It builds useful, lightweight software one step at a time.
 
-## Pages
-- `index.html` — home
-- `projects.html` — projects
-- `studio.html` — experiments and roadmap (standalone page)
-- `contact.html` — project links and an email draft form
+## Website
+
+This is a responsive, multi-page static website built with HTML, CSS, and JavaScript. There is no build step or backend.
+
+- `index.html` — home and featured project
+- `projects.html` — project details, including planned OpenOS Beta
+- `contact.html` — contact links and an email draft form
+- `styles.css` — shared responsive layout, themes, and motion
+- `app.js` — mobile navigation, theme preference, and mailto form behavior
 
 ## Run locally
-Open `index.html` in your browser, or use VS Code Live Server.
+
+Open `index.html` in a browser, or use VS Code Live Server.
 
 ## GitHub Pages
-This is a plain HTML/CSS/JavaScript site and has no build step. In **GitHub repository Settings > Pages**, choose **Deploy from a branch**, branch `main`, folder `/(root)`.
 
-For a project repository, the address usually includes the repository name, such as `https://openlabs-web.github.io/`, depending on your GitHub organization/account setup.
+In the repository’s **Settings → Pages**, select **Deploy from a branch**, branch `main`, folder `/(root)`. The site uses no build command.
 
-## Important notes
-- Website version: `v1.01a`.
-- The contact form opens a prefilled email draft; the visitor must send it from their email app. The site does not store messages.
-- Sign-in, sign-up and Supabase are not connected yet.
-- Never put private API keys or passwords in frontend files.
+## Current limitations
+
+- Contact opens a prefilled email draft; visitors must send it using their email app. Messages are not stored.
+- Authentication and Supabase are not connected.
+- OpenOS is a planned free and open-source Linux distribution and is not yet available.
+- OpenStudio Tools are not currently listed as an active project.
